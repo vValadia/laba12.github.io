@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ob">
+        <div id="cube"></div>
+        <div id="hurt"></div>
+    </div>
+<div class="ob">
+  X: <span class="x"></span><br>
+  Y: <span class="y"></span>
+</div>
+<script id="rendered-js" >
+document.querySelector("body").onmousemove = function (event) {
+  event = event || window.event;
+  console.log(event);
+  document.querySelector(".x").innerHTML = event.offsetX;
+  document.querySelector(".y").innerHTML = event.offsetY;
+};
+</script>
+<script>
+document.addEventListener('mousemove', e => {
+    ob.style.left = e.pageX + "px";
+    ob.style.top = e.pageY + "px";
+});
+</script>
+</body>
+</html>
